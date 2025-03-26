@@ -18,18 +18,7 @@ public class Solution {
             int curr = romanNum[romanChar[i]];
             int next = (i + 1 < romanChar.Length) ? romanNum[romanChar[i + 1]] : 0;
 
-            if (curr == 1 && curr < next)
-            {
-                number -= 1;
-            } else if (curr == 10 && curr < next)
-            {
-                number -= 10;
-            } else if (curr == 100 && curr < next)
-            {
-                number -= 100;
-            }else {
-                number += curr;
-            }
+            number += (curr < next) ? -curr : curr;
         
         } 
         return number;           
